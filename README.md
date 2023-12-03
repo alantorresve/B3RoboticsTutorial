@@ -1,7 +1,7 @@
 # B3RoboticsTutorial
 Group B3 Introduction to Robotics Tutorial
 
-This project includes the execution of three basic tasks to demostrate our understanding and abbility to operate an EPSON Pro-6-Axis Robot arm. The performance of each task is measured by the time required for completion.
+This project includes the execution of three basic tasks to demostrate our understanding and ability to operate an EPSON Pro-6-Axis Robot arm. The performance of each task is measured by the time required for completion.
 
 Task 1: Pick and Place
 - Move three blocks and three tokens respectively from the Feeder to the Tray in their respective position
