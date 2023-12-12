@@ -55,7 +55,8 @@ Function PickPlace
                                           Off 8
                                           Wait 0.5
                                           Go BF +Z(50) +Y(5) /2 ' Secure Block Feeder
-                                          HB = HB + 1 
+                                          HB = HB + 1
+                            EndIf
 
               Else
               
@@ -79,5 +80,7 @@ Function PickPlace
                                           Wait 0.5
                                           Go BF +Z(50) +Y(5) /2 ' Secure Block Feeder
                                           HB = HB + 1
+                            EndIf
+              EndIf
 
 Fend
