@@ -9,7 +9,7 @@ Motor On
 Power High
 Speed 30
 Accel 30, 30
-SpeedS 700
+SpeedS 500
 AccelS 5000
 Tool 1
     Go START

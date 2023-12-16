@@ -39,10 +39,12 @@ Wait Sw(3) = On Or Sw(4) = On Or Sw(0) = On
 
 If Sw(3) = On Then
 	Quit QuantityCheck
+	Quit WhiteButton
 	GoTo Repositioning
 EndIf
 If Sw(4) = On Then
 	Quit QuantityCheck
+	Quit BlueButton
 	GoTo Random
 EndIf
 If Sw(0) = On Then
