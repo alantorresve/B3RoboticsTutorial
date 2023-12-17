@@ -9,7 +9,7 @@ Motor On
 Power High
 Speed 30
 Accel 30, 30
-SpeedS 500
+SpeedS 700
 AccelS 5000
 Tool 1
     Go START
@@ -72,8 +72,8 @@ Else ' Block
     
 EndIf
         
-Go PT1 +Z(10) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 29.7) /2 CP ' Secure Place
-Go PT1 +Z(5) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 29.7) /2
+Go PT1 +Z(10) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 29.7) +X(-ITEM_POS / 2) /2 CP ' Secure Place
+Go PT1 +Z(5) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 29.7) +X(-ITEM_POS / 2) /2
 ''Go PT1 +Y(ITEM_POS * 30) +X(ITEM_TYPE * 31) /2 ' Place
 Off 8
 Wait 0.5

@@ -1,11 +1,11 @@
-ENVT0100,LM:2023/12/16 09:52:21:382,DS:0000002829,CS:25458,MA:20-1E-88-D5-21-EF,EI:           
+ENVT0100,LM:2023/12/17 17:03:15:803,DS:0000002827,CS:14638,MA:20-1E-88-D5-21-EF,EI:           
 SystemProperties {
 	sRC50Version="5.4.7"
 	sGUID="e524626e-87e9-4665-b9f5-0c17827fe874"
 	bSimple=False
 	sCreated="15/12/2023 12:55:30"
-	sLastModified="16/12/2023 17:52:21"
-	bBuildComplete=False
+	sLastModified="18/12/2023 01:03:14"
+	bBuildComplete=True
 	bRebuildRequired=False
 	bClearControllerProject=False
 	bClearGlobalPreserves=False
@@ -30,25 +30,25 @@ ProgramFile1 {
 	sName="Main.prg"
 	bCompiled=True
 	bStoreInController=True
-	sTimeSavedInController="15/12/2023 13:09:36"
+	sTimeSavedInController="17/12/2023 17:03:14"
 }
 ProgramFile2 {
 	sName="Task2.prg"
 	bCompiled=True
 	bStoreInController=True
-	sTimeSavedInController="15/12/2023 07:10:34"
+	sTimeSavedInController="17/12/2023 17:01:18"
 }
 ProgramFile3 {
 	sName="Task3.prg"
-	bCompiled=False
+	bCompiled=True
 	bStoreInController=True
-	sTimeSavedInController="16/12/2023 09:12:08"
+	sTimeSavedInController="17/12/2023 16:55:10"
 }
 nIncludeFileCount=0
 nPointFileCount=1
 PointFile1 {
 	sName="Points.pts"
-	sTimeSavedInController="16/12/2023 08:17:26"
+	sTimeSavedInController="17/12/2023 16:46:16"
 }
 OperatorSettings {
 	OperatorWindow {

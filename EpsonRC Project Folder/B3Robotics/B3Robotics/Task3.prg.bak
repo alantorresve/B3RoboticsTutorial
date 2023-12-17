@@ -235,7 +235,7 @@ Print "Executing Pick and Place operation"
 If TRAY = 1 Then
 		
         Go PT1 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP ' Secure Pick
-        Go PT1 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) +Z(-ITEM_POS / 2) +X(-ITEM_TYPE / 2) /2 ' Pick
+        Go PT1 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) +Z(-ITEM_POS / 2) /2 ' Pick
         On 8
         Wait 0.5
         Go PT1 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP ' Secure Pick
@@ -281,7 +281,7 @@ If TRAY = 1 Then
 Else
 
         Go PT2 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP ' Secure Pick
-        Go PT2 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) +Z(-ITEM_POS / 2) +X(-ITEM_TYPE / 2) /2 ' Pick
+        Go PT2 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) +Z(-ITEM_POS / 2) /2 ' Pick
         On 8
         Wait 0.5
         Go PT2 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP ' Secure Pick
@@ -492,4 +492,5 @@ If H > 0 Then
 		PartCheck()
 EndIf
 Fend
+
 

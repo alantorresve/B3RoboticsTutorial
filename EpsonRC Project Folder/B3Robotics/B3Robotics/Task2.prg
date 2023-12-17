@@ -36,7 +36,7 @@ Function PickPlace
               If TRAY = 1 Then
 
                             Go PT1 +Z(15) +Z(HEIGHT * 6) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2
-                            Go PT1 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2
+                            Go PT1 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) +X(-ITEM_POS / 2) /2
                             On 8
                             Wait 0.5
                             Go PT1 +Z(15) +Z(HEIGHT * 6) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2
@@ -52,7 +52,7 @@ Function PickPlace
               Else
               
                             Go PT2 +Z(15) +Z(HEIGHT * 6) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2
-                            Go PT2 +Y(ITEM_POS * 30) +X(ITEM_TYPE * 30) +Z(ITEM_POS) /2
+                            Go PT2 +Y(ITEM_POS * 30) +X(ITEM_TYPE * 30) +Z(-ITEM_POS) +X(-ITEM_POS / 2) /2
                             On 8
                             Wait 0.5
                             Go PT2 +Z(15) +Z(HEIGHT * 6) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2

@@ -1,0 +1,121 @@
+> off 8
+> 
+> off 8
+> 
+> spee
+> home
+> 
+!!Error: 2318, Cannot execute a motion command when an error has been detected.
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> on 8
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> Go BA1
+> 
+> 
+> 
+> go start
+> 
+> 
+> 
+> 
+> 
+> 
+> Go BF +Z(10)
+> 
+> Go BF
+> 
+> On 8
+> 
+> 
+> Go BA +Z(5)/2
+!!Error: 4007, Coordinates conversion error. The end/mid point is out of the motion area. Jogging to the out of the motion area.
+> 
+!!Error: 4007, Coordinates conversion error. The end/mid point is out of the motion area. Jogging to the out of the motion area.
+> 
+!!Error: 4007, Coordinates conversion error. The end/mid point is out of the motion area. Jogging to the out of the motion area.
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> Go PT1+Z(10)/2
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+!!Error: 5041, Motor torque output failure in low power state. Check the power cable connection, robot, brake, driver, or motor., Joint 6
+> 
+!!Error: 5040, Motor torque output failure in high power state. Check the power cable connection, the robot, the driver or the motor., Joint 6
+> 
+> home
+> go PT1+z(0)/2
+> 
+> 
+> go BF/2
+> on 8
+> 
+> 
+> go BF +Z(10)/2
+> 
+!!Error: 3205, Point is not specified.
+> 
+> 
+> 
+> 
+> 
+> go BA /2
+> 
+> 
+> 
+> 
+> 
+> 
+> go START
+> 
+> 
+> 
+> 
+> 
+> 
+> off 8
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 

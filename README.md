@@ -7,12 +7,15 @@ This project includes the execution of three basic tasks to demonstrate our unde
 ## Task 1: Pick and Place
 - Move three blocks and three tokens respectively from the Feeder to the Tray in their respective positions.
 - Use the Alignment Fixture to ensure the nozzle grasps onto the center of each block or token.
-- Perform the task in reverse, without using the Fixture.
+
 
 ## Task 2: Stack-up
-- Pile up 5 blocks and 5 tokens respectively in alternating order.
+- Pile up 6 blocks and 6 tokens respectively in alternating order.
 
 ## Task 3: Integration Task
-- Include fixtures designed by team members, such as I/O box and HMI terminal, to operate the robot.
-- Incorporate 3D printed Alignment and Feeder into the robot's workcell.
-- Perform tasks...(choose tasks)
+
+🔴 STOP : Stop/Resume current operation
+🟠 RESET : Resets the Robot and checks the trays and feeders again 
+🟢 START: Starts the operation by checking the trays and feeders for information
+🔵 REPOSITION: Reposition all the tray pieces detected to the feeders, if some
+⚪ RANDOM: Execute a Random Stacking and checks if the piece is a token or a block and the orientation of the block

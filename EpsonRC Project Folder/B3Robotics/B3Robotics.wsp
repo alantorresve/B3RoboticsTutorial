@@ -1,6 +1,6 @@
-ENVT0100,LM:2023/12/16 09:53:16:565,DS:0000001548,CS:02569,MA:20-1E-88-D5-21-EF,EI:           
+ENVT0100,LM:2023/12/17 17:15:17:732,DS:0000001545,CS:10049,MA:20-1E-88-D5-21-EF,EI:           
 sActiveChild="Task3.prg"
-bMdiMaximized=False
+bMdiMaximized=True
 ProgramFile1 {
 	sName="Main.prg"
 	bOpened=True
@@ -19,7 +19,7 @@ ProgramFile2 {
 	Window {
 		nLeft=0
 		nTop=430
-		nWidth=136
+		nWidth=147
 		nHeight=39
 	}
 }
@@ -30,7 +30,7 @@ ProgramFile3 {
 	Window {
 		nLeft=199
 		nTop=430
-		nWidth=136
+		nWidth=147
 		nHeight=39
 	}
 }
@@ -51,15 +51,15 @@ sActiveWindow="main.prg"
 CmdWindow {
 	bOpened=True
 	Window {
-		nLeft=398
-		nTop=430
-		nWidth=147
-		nHeight=39
+		nLeft=782
+		nTop=28
+		nWidth=331
+		nHeight=191
 	}
 	nWinState=0
 }
 RunWindow {
-	bOpened=False
+	bOpened=True
 	Window {
 		nLeft=0
 		nTop=0
@@ -105,12 +105,12 @@ Macros {
 	}
 }
 RobotMgr {
-	bOpened=False
+	bOpened=True
 	Window {
 		nLeft=0
 		nTop=0
-		nWidth=752
-		nHeight=489
+		nWidth=751
+		nHeight=486
 	}
 }
 UserErrorEditor {
