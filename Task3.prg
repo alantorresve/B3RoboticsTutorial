@@ -102,35 +102,28 @@ If Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
 			GoTo Init
 		EndIf
 	EndIf
-Wait Sw(4) = On
-If Sw(4) = On Then
-	Quit WhiteButton
-	GoTo Random
 EndIf
 
+Wait Sw(0) = On Or Sw(1) = On Or Sw(3) = On Or Sw(4) = On
+If Sw(0) = On Then
+	Wait Sw(1) = On
+	Quit WhiteButton()
+	Reset
+	GoTo Init
 EndIf
-	
-	
-'Wait Sw(0) = On Or Sw(1) = On Or Sw(3) = On Or Sw(4) = On
-'If Sw(0) = On Then
-'	Wait Sw(1) = On
-'	Quit WhiteButton()
-'	Reset
-'	GoTo Init
-'EndIf
-'If Sw(1) = On Then
-'	Quit WhiteButton()
-'	Reset
-'	GoTo Init
-'EndIf
-'If Sw(3) = On Then
-'	Quit WhiteButton()
-'	GoTo Repositioning
-'EndIf
-'If Sw(4) = On Then
-'	Quit WhiteButton()
-'	GoTo Random
-'EndIf
+If Sw(1) = On Then
+	Quit WhiteButton()
+	Reset
+	GoTo Init
+EndIf
+If Sw(3) = On Then
+	Quit WhiteButton()
+	GoTo Repositioning
+EndIf
+If Sw(4) = On Then
+	Quit WhiteButton()
+	GoTo Random
+EndIf
 Fend
 
 Function QuantityCheck
@@ -139,13 +132,11 @@ For TRAY = 1 To 2
               If TRAY = 1 Then
                             For ITEM_TYPE = 0 To 1
                                           For ITEM_POS = 0 To 2
-                                          			If Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
-	                                                        Go PT1 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP
-	                                                        Go PT1 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2
-	                                                        On 8
-	                                                        Wait 0.5
-                                                     
-                                                                                                               
+				Go PT1 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP
+				Go PT1 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2
+				On 8
+				Wait 0.5
+                                                                                          
                                                         If ITEM_TYPE = 0 Then
                                                                       Token1(ITEM_POS) = Sw(17)
                                                                       If Token1(ITEM_POS) = 1 Then
@@ -171,11 +162,12 @@ For TRAY = 1 To 2
               Else
                             For ITEM_TYPE = 0 To 1
                                             For ITEM_POS = 0 To 2
-                                            	If Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
+
                                                           Go PT2 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP
                                                           Go PT2 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) +Z(-ITEM_POS / 2) /2
                                                           On 8
                                                           Wait 0.5
+
                                                           If ITEM_TYPE = 0 Then
                                                                         Token2(ITEM_POS) = Sw(17)
                                                                         If Token2(ITEM_POS) = 1 Then
@@ -246,14 +238,12 @@ For TRAY = 1 To 2
                             For ITEM_TYPE = 0 To 1
                                           For ITEM_POS = 0 To 2
                                                         If ITEM_TYPE = 0 Then
-                                                                      If Token1(ITEM_POS) = On And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
-                                                                                    Print "Repositioning Parts"
+                                                                      If Token1(ITEM_POS) = On Then
                                                                                     PickandPlace()
                                                                                     
                                                                       EndIf
                                                         Else
-                                                                      If Block1(ITEM_POS) = On And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
-                                                                                    Print "Repositioning Parts"
+                                                                      If Block1(ITEM_POS) = On Then
                                                                                     PickandPlace()
                                                                                     
                                                                       EndIf
@@ -264,14 +254,12 @@ For TRAY = 1 To 2
                             For ITEM_TYPE = 0 To 1
                                           For ITEM_POS = 0 To 2
                                                         If ITEM_TYPE = 0 Then
-                                                                      If Token2(ITEM_POS) = On And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
-                                                                                    Print "Repositioning Parts"
+                                                                      If Token2(ITEM_POS) = On Then
                                                                                     PickandPlace()
                                                                                     
                                                                       EndIf
                                                         Else
-                                                                      If Block2(ITEM_POS) = On And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
-                                                                                    Print "Repositioning Parts"
+                                                                      If Block2(ITEM_POS) = On Then
                                                                                     PickandPlace()
                                                                                     
                                                                       EndIf
@@ -285,7 +273,7 @@ Fend
 
 Function PickandPlace
 Print "Executing Pick and Place operation"
-If TRAY = 1 And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
+If TRAY = 1 Then
 		
         Go PT1 +Z(20) +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) /2 CP ' Secure Pick
         Go PT1 +Y(ITEM_POS * 30.7) +X(ITEM_TYPE * 30) +Z(-ITEM_POS / 2) /2 ' Pick
@@ -385,7 +373,7 @@ Do While HT > 0 And HB > 0
 	RandomTorB = Int(Rnd(2))
 	If RandomTorB = 0 Then 'Token
 	    Print "Token was randomly chosen"
-	    If HT > 0 And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
+	    If HT > 0 Then
 	        Go TF +Z((HT - 1) * 6) +Z(20) +Y(10) /2 CP
 	        Go TF +Z((HT - 1) * 6) /2
 	        On 8
@@ -407,7 +395,7 @@ Do While HT > 0 And HB > 0
 		Shift = Int(Rnd(2))
 		If Shift = 0 Then
 		    Print "Block was randomly chosen"
-		    If HB > 0 And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
+		    If HB > 0 Then
 		        Go BF +Z((HB - 1) * 6) +Z(10) +Y(10) /2 CP
 		        Go BF +Z((HB - 1) * 6) /2
 		        On 8
@@ -428,7 +416,7 @@ Do While HT > 0 And HB > 0
 	    	EndIf
 		 Else 'Shifted Block
 		    Print "Shifted Block was randomly chosen"
-		    If HB > 0 And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
+		    If HB > 0 Then
 		        Go BF +Z((HB - 1) * 6) +Z(10) +Y(10) /2 CP
 		        Go BF +Z((HB - 1) * 6) /2
 		        On 8
@@ -457,7 +445,6 @@ Integer Check1
 Integer Check2
 
 Do While H > 0
-	If Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
 		Go TA1 +Z(20) +Z((H - 1) * 6) /2 CP
 		Go TA1 +Z(20) +Z((H - 1) * 6) +Y(6) /2 CP 'Check for normal block
 		On 8
@@ -479,7 +466,7 @@ Do While H > 0
 		Go TA1 +Z(20) +Z((H - 1) * 6) /2
 		
 		
-		If Check1 = 1 And Check2 = 0 And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
+		If Check1 = 1 And Check2 = 0 Then
 		    Print "Non-shifted Block Detected"
 		    Go BA +Z((H - 1) * 6) +Z(10) /2
 		    Go BA +Z((H - 1) * 6) /2
@@ -496,7 +483,7 @@ Do While H > 0
 		    H = H - 1
 		
 		EndIf
-		If Check1 = 0 And Check2 = 1 And Sw(2) = On And Sw(0) = Off And Sw(1) = Off Then
+		If Check1 = 0 And Check2 = 1 Then
 		    Print "Shifted Block Detected"
 		    Go BA1 +Z((H - 1) * 6) +Z(10) /2
 		    Go BA1 +Z((H - 1) * 6) /2
